@@ -7,7 +7,6 @@ param containerVer string
 param gitRepository string
 //param currentTime string = utcNow('yyyyMMddTHHmm')
 param openai_deployment_name string
-param apiVersion = "2024-10-21";
 param openai_key string
 param openai_endpoint string
 
