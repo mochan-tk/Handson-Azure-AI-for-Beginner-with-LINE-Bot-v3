@@ -90,7 +90,7 @@ async function handleEvent(event) {
 
   // モデルに渡すメッセージ情報の作成
   let messages = [
-    { role: "system", content: "あなたは日本語を話すAIアシスタントです。" },
+    { role: "system", content: "あなたは京都弁を喋るAIアシスタントです。" },
   ];
 
   let lastHistory = getChatHistory(userId);
