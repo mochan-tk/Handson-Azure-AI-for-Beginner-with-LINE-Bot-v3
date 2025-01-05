@@ -6,9 +6,9 @@ param access string
 param containerVer string
 param gitRepository string
 //param currentTime string = utcNow('yyyyMMddTHHmm')
-param openai_deployment_name string
-param openai_key string
-param openai_endpoint string
+param openaiDeploymentName string
+param openaiKey string
+param openaiEndpoint string
 
 var uniqueStr = uniqueString(resourceGroup().id)
 var random = toLower(uniqueStr)
@@ -278,15 +278,15 @@ resource containerApps 'Microsoft.App/containerApps@2024-03-01' = {
             }
             {
               name: 'AZURE_OPENAI_DEPLOYMENT_NAME'
-              value: openai_deployment_name
+              value: openaiDeploymentName
             }
             {
               name: 'AZURE_OPENAI_KEY'
-              value: openai_key
+              value: openaiKey
             }
             {
               name: 'AZURE_OPENAI_ENDPOINT'
-              value: openai_endpoint
+              value: openaiEndpoint
             }
           ]
         }

@@ -5,7 +5,7 @@ const express = require('express');
 const { AzureOpenAI } = require("openai");
 
 const deployment = process.env.AZURE_OPENAI_DEPLOYMENT_NAME; // model = "deployment name".
-const apiVersion = "2024-10-21";
+const apiVersion = "2024-05-01-preview";
 const key = process.env.AZURE_OPENAI_KEY;
 const endpoint = process.env.AZURE_OPENAI_ENDPOINT;
 const openaiClient = new AzureOpenAI({
@@ -72,6 +72,7 @@ app.post('/callback', line.middleware(config), (req, res) => {
 
 // event handler
 async function handleEvent(event) {
+  console.log('processing handleEvent');  
   const userId = event.source.userId;
 
   if (event.type !== 'message' || event.message.type !== 'text') {
@@ -143,7 +144,7 @@ async function handleEvent(event) {
 }
 
 // listen on port
-const port = process.env.PORT || 7071;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`listening on ${port}`);
 });
